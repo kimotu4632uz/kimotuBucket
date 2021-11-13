@@ -1,0 +1,39 @@
+{
+  "version": "10.2+2.0.1",
+  "url": [
+    "https://mirror.msys2.org/mingw/clang64/mingw-w64-clang-x86_64-libcdio-paranoia-10.2%2B2.0.0-2-any.pkg.tar.zst",
+    "https://mirror.msys2.org/mingw/clang64/mingw-w64-clang-x86_64-libcdio-2.1.0-6-any.pkg.tar.zst",
+    "https://mirror.msys2.org/mingw/clang64/mingw-w64-clang-x86_64-libiconv-1.16-2-any.pkg.tar.zst"
+  ],
+  "hash": [
+    "aac1d3558dd08a0b53933942cd766ac3550590f8cfce0e1a4622ba5ee2ffc402",
+    "ac4250776f3ac42d746fa6dde3ef65ba23ab3d3d53612e3c8b1e28aeb8cc1a19",
+    "ae2f70baba45e61376e03369061f4f947e7cdc00c1812cbd2a2de7088c2b8c4f"
+  ],
+  "depends": [
+    "zstd"
+  ],
+  "installer": {
+    "script": [
+      "zstd -d --rm $dir\\mingw-w64-clang-x86_64-libcdio-paranoia-10.2%2B2.0.0-2-any.pkg.tar.zst",
+      "tar xvf $dir\\mingw-w64-clang-x86_64-libcdio-paranoia-10.2%2B2.0.0-2-any.pkg.tar -C $dir",
+      "rm $dir\\mingw-w64-clang-x86_64-libcdio-paranoia-10.2%2B2.0.0-2-any.pkg.tar",
+      "zstd -d --rm $dir\\mingw-w64-clang-x86_64-libcdio-2.1.0-6-any.pkg.tar.zst",
+      "tar xvf $dir\\mingw-w64-clang-x86_64-libcdio-2.1.0-6-any.pkg.tar -C $dir",
+      "rm $dir\\mingw-w64-clang-x86_64-libcdio-2.1.0-6-any.pkg.tar",
+      "zstd -d --rm $dir\\mingw-w64-clang-x86_64-libiconv-1.16-2-any.pkg.tar.zst",
+      "tar xvf $dir\\mingw-w64-clang-x86_64-libiconv-1.16-2-any.pkg.tar -C $dir",
+      "rm $dir\\mingw-w64-clang-x86_64-libiconv-1.16-2-any.pkg.tar",
+      "cp $dir\\clang64\\bin\\cd-paranoia.exe $dir\\",
+      "cp $dir\\clang64\\bin\\libcdio_cdda-2.dll $dir\\",
+      "cp $dir\\clang64\\bin\\libcdio_paranoia-2.dll $dir\\",
+      "cp $dir\\clang64\\bin\\libcdio-19.dll $dir\\",
+      "cp $dir\\clang64\\bin\\libiconv-2.dll $dir\\",
+      "rm -r $dir\\clang64",
+      "rm $dir\\.BUILDINFO",
+      "rm $dir\\.MTREE",
+      "rm $dir\\.PKGINFO"
+    ]
+  },
+  "bin": "cd-paranoia.exe"
+}
