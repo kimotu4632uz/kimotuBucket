@@ -15,24 +15,11 @@
   ],
   "installer": {
     "script": [
-      "zstd -d --rm $dir\\libcdio-paranoia.tar.zst",
-      "tar xvf $dir\\libcdio-paranoia.tar -C $dir",
-      "rm $dir\\libcdio-paranoia.tar",
-      "zstd -d --rm $dir\\libcdio.tar.zst",
-      "tar xvf $dir\\libcdio.tar -C $dir",
-      "rm $dir\\libcdio.tar",
-      "zstd -d --rm $dir\\libiconv.tar.zst",
-      "tar xvf $dir\\libiconv.tar -C $dir",
-      "rm $dir\\libiconv.tar",
-      "cp $dir\\clang64\\bin\\cd-paranoia.exe $dir\\",
-      "cp $dir\\clang64\\bin\\libcdio_cdda-2.dll $dir\\",
-      "cp $dir\\clang64\\bin\\libcdio_paranoia-2.dll $dir\\",
-      "cp $dir\\clang64\\bin\\libcdio-19.dll $dir\\",
-      "cp $dir\\clang64\\bin\\libiconv-2.dll $dir\\",
-      "rm -r $dir\\clang64",
-      "rm $dir\\.BUILDINFO",
-      "rm $dir\\.MTREE",
-      "rm $dir\\.PKGINFO"
+      "zstd -d --rm $dir\\libcdio-paranoia.tar.zst $dir\\libcdio.tar.zst $dir\\libiconv.tar.zst",
+      "7z e $dir\\libcdio-paranoia.tar -o\"${dir}\" cd-paranoia.exe libcdio_paranoia-2.dll libcdio_cdda-2.dll -r",
+      "7z e $dir\\libcdio.tar -o\"${dir}\" libcdio-19.dll -r",
+      "7z e $dir\\libiconv.tar -o\"${dir}\" libiconv-2.dll -r",
+      "rm $dir\\*.tar"
     ]
   },
   "bin": "cd-paranoia.exe"
