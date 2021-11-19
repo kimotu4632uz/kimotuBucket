@@ -11,6 +11,7 @@
     "ae2f70baba45e61376e03369061f4f947e7cdc00c1812cbd2a2de7088c2b8c4f"
   ],
   "depends": [
+    "7zip",
     "zstd"
   ],
   "installer": {
