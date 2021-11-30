@@ -1,9 +1,0 @@
-{
-  "version": "0.6.2",
-  "url": "https://github.com/metabrainz/libdiscid/releases/download/v0.6.2/libdiscid-0.6.2-win64.zip",
-  "hash": "9fd815f6bd0c624f0f41dd81209aeaa3f2129dcd1d617f88b844b4503d12598e",
-  "bin": [
-    "discid.exe",
-    "discisrc.exe"
-  ]
-}
